@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from core.models import About, Service, RecentWork, Client, Skill, ProjectCategory
+from core.models import About, Service, RecentWork, Client, Skill, ProjectCategory,SocialMedia, TotalWorkCount
 
 # Create your views here.
 class HomeTemplateView(TemplateView):
@@ -14,8 +14,10 @@ class HomeTemplateView(TemplateView):
         context['client'] = Client.objects.all()
         context['skills'] = Skill.objects.all()
         context['projectcategory'] = ProjectCategory.objects.all()
+        context['socialmedia'] = SocialMedia.objects.all()
+        context['totalworkcount'] = TotalWorkCount.objects.first()
 
 
-        # print(context)
+        print(context['socialmedia'])
         return context
 

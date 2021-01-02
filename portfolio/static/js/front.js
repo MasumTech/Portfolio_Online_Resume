@@ -253,14 +253,14 @@ $(function () {
 function map() {
 
     var mapId = 'map',
-        mapCenter = [53.14, 8.22],
+        mapCenter = [23.810331, 90.412521],
         mapMarker = true;
 
     if ($('#' + mapId).length > 0) {
 
         var icon = L.icon({
-            iconUrl: 'img/marker.png',
-            iconSize: [25, 37.5],
+            iconUrl: 'static/img/marker.png',
+            iconSize: [22, 37.5],
             popupAnchor: [0, -18],
             tooltipAnchor: [0, 19]
         });
@@ -275,7 +275,7 @@ function map() {
 
         var map = L.map(mapId, {
             center: mapCenter,
-            zoom: 13,
+            zoom: 8,
             dragging: dragging,
             tap: tap,
             scrollWheelZoom: false

@@ -1,5 +1,8 @@
+from core.models import About, Service, RecentWork, Client,\
+    Skill, ProjectCategory,SocialMedia, TotalWorkCount
+from django.conf import settings
 from django.contrib import admin
-from core.models import About, Service, RecentWork, Client, Skill, ProjectCategory
+
 # Register your models here.
 
 
@@ -14,3 +17,8 @@ admin.site.register(Client)
 admin.site.register(Skill)
 
 admin.site.register(ProjectCategory)
+
+admin.site.register(TotalWorkCount)
+
+admin.site.register(SocialMedia)
+

@@ -2,6 +2,7 @@ from django.db import models
 
 # About Model
 class About(models.Model):
+    logo = models.ImageField(upload_to="logo", default="default.png")
     title = models.CharField(max_length=100, verbose_name="About title")
     short_description = models.TextField()
     description = models.TextField(verbose_name="About description")
@@ -47,6 +48,17 @@ class ProjectCategory(models.Model):
         return self.name
 
 
+# Total Work Count Model
+class TotalWorkCount(models.Model):
+    website = models.IntegerField(default=0, verbose_name="Website Count")
+    client = models.IntegerField(default=0, verbose_name="Client Count")
+    project = models.IntegerField(default=0, verbose_name="Project Count")
+    publication = models.IntegerField(default=0, verbose_name="Publication Count")
+
+    def __unicode__(self):
+        return self.website
+
+
 # Recent Work Model
 class RecentWork(models.Model):
     title = models.CharField(max_length=100, verbose_name="Project title")
@@ -69,6 +81,12 @@ class Client(models.Model):
         return self.name
 
 
+# Social Media Model
+class SocialMedia(models.Model):
+    facebook = models.CharField(max_length=100, verbose_name="Facebook URL")
+    linkedin = models.CharField(max_length=100, verbose_name="Linkedin URL")
+    hackerrank = models.CharField(max_length=100, verbose_name="Hackerrank URL")
+    github = models.CharField(max_length=100, verbose_name="Github URL")
 
-
-
+    def __str__(self):
+        return self.linkedin
